@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-4">
+    <h1>Welcome, user!</h1>
+    <p>Explore our gallery, download software, and much more!</p>
+    <a href="@Url.Action("Feed", "Gallery")" class="btn btn-primary">Go to Gallery</a>
+    <a href="@Url.Action("Index", "Downloads")" class="btn btn-success">Go to Downloads</a>
+</div>

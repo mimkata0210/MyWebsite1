@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MyWebsite1.Models.Photo>
+
+<h2>My Gallery</h2>
+
+<!-- Бутон за качване -->
+<a href="@Url.Action("Create", "MyGallery")" class="btn btn-success mb-3">
+    <i class="fas fa-upload"></i> Upload Image
+</a>
+
+<div id="photosList">
+    @foreach (var photo in Model)
+    {
+        <div class="photo-item mb-3" data-id="@photo.Id">
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(photo.ImageData)" alt="@photo.Title" width="200" />
+            <p>@photo.Title</p>
+            <button class="btn btn-danger btn-sm delete-photo">Delete</button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('#photosList').on('click', '.delete-photo', function () {
+                if (!confirm('Are you sure you want to delete this photo?')) return;
+
+                var container = $(this).closest('.photo-item');
+                var photoId = container.data('id');
+
+                $.ajax({
+                    url: '/MyGallery/Delete/' + photoId,
+                    type: 'POST',
+                    headers: {
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function () {
+                        container.fadeOut(300, function () { $(this).remove(); });
+                    },
+                    error: function () {
+                        alert('Failed to delete photo. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+}

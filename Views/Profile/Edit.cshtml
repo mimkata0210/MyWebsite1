@@ -1,0 +1,126 @@
+﻿@model MyWebsite1.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Редактирай профила";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["StatusMessage"]</div>
+}
+
+<div class="card mt-4">
+    <div class="card-body">
+        <form asp-action="Edit" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!-- Бутоните на един ред -->
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                    Смяна на парола
+                </button>
+
+                <button type="submit" class="btn btn-primary">Запази промените</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Модален прозорец за смяна на парола -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Същата форма, за да постне и паролата -->
+            <form asp-action="Edit" method="post" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Смяна на парола</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Затвори"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Скриваме потребителското име и email, за да не се губят при пост -->
+                    <input type="hidden" asp-for="Username" />
+                    <input type="hidden" asp-for="Email" />
+
+                    <div class="mb-3">
+                        <label asp-for="CurrentPassword" class="form-label"></label>
+                        <input asp-for="CurrentPassword" class="form-control" type="password" />
+                        <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NewPassword" class="form-label"></label>
+                        <input asp-for="NewPassword" class="form-control" type="password" />
+                        <span asp-validation-for="NewPassword" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ConfirmNewPassword" class="form-label"></label>
+                        <input asp-for="ConfirmNewPassword" class="form-control" type="password" />
+                        <span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отказ</button>
+                    <button type="submit" class="btn btn-primary">Смени паролата</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Скриптове -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<!-- Тема за модалите -->
+<style>
+    /* Тема за картата */
+    body[data-theme="dark"] .card {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+
+    body[data-theme="light"] .card {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+
+    body[data-theme="dark"] .modal-content {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+
+    body[data-theme="light"] .modal-content {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+    }
+
+    .btn-close {
+        filter: invert(var(--toggler-icon-invert));
+    }
+</style>

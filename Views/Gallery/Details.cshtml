@@ -1,0 +1,161 @@
+﻿@model MyWebsite1.Models.Photo
+
+@{
+    ViewData["Title"] = "Photo Details";
+    var comments = ViewBag.Comments as List<MyWebsite1.Models.Comment>;
+    var currentUserId = ViewBag.CurrentUserId as string;
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <!-- zoomed picture -->
+    <div class="card mb-4">
+        @if (Model.ImageData != null && Model.ImageData.Length > 0)
+        {
+            <img class="card-img-top"
+                 src="data:image;base64,@Convert.ToBase64String(Model.ImageData)"
+                 alt="@Model.Title" />
+        }
+        else
+        {
+            <img class="card-img-top"
+                 src="https://via.placeholder.com/600x400"
+                 alt="No Image Available" />
+        }
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">Uploaded by: @Model.User.UserName</p>
+            <p class="card-text">
+                Uploaded on: @Model.DateCreated.ToLocalTime().ToString("MM/dd/yyyy")
+            </p>
+        </div>
+    </div>
+
+    <!-- Comment section-->
+    <section class="comments-section">
+        <h4>Comments</h4>
+
+        <div id="comments-list">
+            @if (comments?.Any() == true)
+            {
+                foreach (var c in comments)
+                {
+                    <div class="border rounded p-3 mb-3" id="comment-@c.Id">
+                        <!-- -->
+                        <span class="comment-author">
+                            @(c.User?.UserName ?? "Unknown"):
+                        </span>
+                        <span class="comment-content">@c.Content</span>
+                        <br />
+                        <span class="comment-date">
+                            @c.DateCreated.ToLocalTime().ToString("g")
+                        </span>
+
+                        @if (c.UserId == currentUserId)
+                        {
+                            <button class="btn btn-sm btn-danger float-end btn-delete-comment"
+                                    data-id="@c.Id">
+                                Delete
+                            </button>
+                        }
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No comments yet.</p>
+            }
+        </div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.AntiForgeryToken()
+            <textarea id="comment-text"
+                  class="form-control mt-2"
+                  rows="3"
+                  placeholder="Write a comment..."></textarea>
+            <button id="btn-add-comment"
+                    data-photo-id="@Model.Id"
+                    class="btn btn-primary mt-2">
+                Add Comment
+            </button>
+        }
+        else
+        {
+            <p>
+                <a href="/Identity/Account/Login">Login</a> to comment.
+            </p>
+        }
+    </section>
+
+    <a href="@Url.Action("Feed", "Gallery")" class="btn btn-outline-primary mt-4">
+        Back to Gallery
+    </a>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        (function () {
+            var currentUserId = '@currentUserId';
+
+            // Добавяне на нов коментар
+            $('#btn-add-comment').click(function () {
+                var photoId = $(this).data('photo-id'),
+                    content = $('#comment-text').val().trim();
+                if (!content) {
+                    alert('Comment cannot be empty.');
+                    return;
+                }
+
+                $.post('@Url.Action("AddComment", "Gallery")',
+                    {
+                        photoId: photoId,
+                        content: content,
+                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    function (res) {
+                        if (!res.success) {
+                            alert(res.message);
+                            return;
+                        }
+                        var c = res.comment,
+                            html = ''
+                              + '<div class="border rounded p-3 mb-3" id="comment-' + c.id + '">'
+                              +   '<span class="comment-author">' + c.user + ':</span> '
+                              +   '<span class="comment-content">' + c.content + '</span>'
+                              +   '<br/>'
+                              +   '<span class="comment-date">' + c.dateCreated + '</span>';
+                        if (c.userId === currentUserId) {
+                            html += '<button class="btn btn-sm btn-danger float-end btn-delete-comment" '
+                                  +   'data-id="' + c.id + '">Delete</button>';
+                        }
+                        html += '</div>';
+                        $('#comments-list').append(html);
+                        $('#comment-text').val('');
+                    }
+                );
+            });
+
+            // Изтриване на коментар
+            $('#comments-list').on('click', '.btn-delete-comment', function () {
+                if (!confirm('Are you sure you want to delete this comment?')) return;
+                var btn = $(this), id = btn.data('id');
+                $.post('@Url.Action("DeleteComment", "Gallery")',
+                    {
+                        id: id,
+                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    function (res) {
+                        if (res.success) {
+                            $('#comment-' + id).remove();
+                        } else {
+                            alert(res.message);
+                        }
+                    }
+                );
+            });
+        })();
+    </script>
+}

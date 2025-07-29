@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Shared files";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <!-- Conditional check for displaying image or file -->
+                    @if (item is MyWebsite1.Models.Photo photo && photo.ImageData != null && photo.ImageData.Length > 0)
+                    {
+                        <!-- Display image -->
+                        <img src="data:image;base64,@Convert.ToBase64String(photo.ImageData)" class="card-img-top" alt="@photo.Title" />
+                        <div class="card-body">
+                            <h5 class="card-title">@photo.Title</h5>
+                            <p class="card-text">@photo.DateCreated.ToString("MM/dd/yyyy")</p>
+                            <a href="@Url.Action("Details", "Gallery", new { id = photo.Id })" class="btn btn-primary">View Photo</a>
+                        </div>
+                    }
+                    else if (item is MyWebsite1.Models.Download download)
+                    {
+                        <!-- Display file info -->
+                        <div class="card-body">
+                            <h5 class="card-title">@download.Title</h5>
+                            <p class="card-text"><strong>Description:</strong> @download.Description</p>
+                            <p class="card-text"><strong>File Type:</strong> @download.FileType</p>
+                            <p class="card-text"><strong>Uploaded on:</strong> @download.DateCreated.ToString("MM/dd/yyyy")</p>
+                            <a href="@Url.Action("Download", "Downloads", new { id = download.Id })" class="btn btn-primary">Download File</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <!-- If neither is a Photo nor a Download -->
+                        <div class="card-body">
+                            <p>Invalid item type.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

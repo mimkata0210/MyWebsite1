@@ -1,0 +1,88 @@
+﻿/* 
+   Дефиниране на променливи (light);
+*/
+:root {
+    --bg: #fff;
+    --fg: #111;
+    --card-bg: #f5f5f5;
+    --link: #007bff;
+    --border: #ddd;
+    --muted: #6c757d;
+    --invert: 0;
+}
+
+/*
+    Тъмна тема: презаписване
+*/
+body[data-theme="dark"] {
+    --bg: #121212;
+    --fg: #fff;
+    --card-bg: #1e1e1e;
+    --link: #66ccff;
+    --border: #333;
+    --muted: var(--fg);
+    --invert: 1;
+}
+
+/*
+   Основни стилове
+*/
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+.navbar, footer, .card {
+    background-color: var(--card-bg);
+    color: var(--fg);
+    border-color: var(--border);
+}
+
+    .navbar a {
+        color: var(--fg);
+    }
+
+        .navbar a:hover,
+        .navbar a:focus {
+            color: var(--link);
+        }
+
+.navbar-toggler-icon {
+    filter: invert(var(--invert));
+}
+
+.custom-dropdown,
+.custom-dropdown .dropdown-item {
+    background-color: var(--card-bg);
+    color: var(--fg);
+}
+
+    .custom-dropdown .dropdown-item:hover,
+    .custom-dropdown .dropdown-item:focus {
+        background-color: var(--border);
+    }
+
+.btn-outline-primary {
+    border-color: var(--link);
+    color: var(--link);
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--link);
+        color: #fff;
+    }
+
+/* 
+    Коментари: заглавия и дати 
+*/
+.comments-section .comment-author {
+    font-weight: bold;
+}
+
+.comments-section .comment-date {
+    display: block;
+    font-size: 0.85em;
+    color: var(--muted);
+}

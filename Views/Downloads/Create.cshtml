@@ -1,0 +1,94 @@
+﻿@model MyWebsite1.Models.Download
+@{
+    ViewData["Title"] = "Upload File";
+    ViewData["CurrentPage"] = "Downloads";
+}
+<div class="downloads-container mx-auto mt-4" style="max-width: 650px;">
+    <h2>Upload a File</h2>
+    <form method="post" enctype="multipart/form-data" id="uploadForm">
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input asp-for="Description" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Choose File</label>
+            <input type="file" name="uploadedFile" class="form-control" required />
+        </div>
+
+        <!-- Progress & Spinner -->
+        <div id="progressContainer" class="mb-3 d-none">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-pink"
+                     role="progressbar" style="width: 0%" id="uploadProgress">
+                    0%
+                </div>
+            </div>
+            <div class="text-center mt-2" id="uploadStatus">
+                <div class="spinner-border text-pink" role="status">
+                    <span class="visually-hidden">Uploading...</span>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-upload me-1"></i> Upload
+        </button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        const form = document.getElementById("uploadForm");
+        const progressBar = document.getElementById("uploadProgress");
+        const progressContainer = document.getElementById("progressContainer");
+        const uploadStatus = document.getElementById("uploadStatus");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("POST", form.action || window.location.href, true);
+
+            progressContainer.classList.remove("d-none");
+            progressBar.style.width = "0%";
+            progressBar.textContent = "0%";
+            uploadStatus.innerHTML = `
+                <div class="spinner-border text-pink" role="status">
+                    <span class="visually-hidden">Uploading...</span>
+                </div>`;
+
+            xhr.upload.addEventListener("progress", function (e) {
+                if (e.lengthComputable) {
+                    const percent = Math.round((e.loaded / e.total) * 100);
+                    progressBar.style.width = percent + "%";
+                    progressBar.textContent = percent + "%";
+                }
+            });
+
+            xhr.onload = function () {
+                if (xhr.status === 200 || xhr.status === 302) {
+                    uploadStatus.innerHTML = `<span class='text-success fw-bold'>Upload complete! Redirecting...</span>`;
+                    progressBar.classList.remove("progress-bar-animated");
+                    // Redirect after short delay to avoid confusion
+                    setTimeout(() => {
+                        window.location.href = "/Downloads/Index"; // Adjust if you want to redirect elsewhere
+                    }, 1200);
+                } else {
+                    uploadStatus.innerHTML = `<span class='text-danger fw-bold'>Upload failed. Please try again.</span>`;
+                }
+            };
+
+            xhr.onerror = function () {
+                uploadStatus.innerHTML = `<span class='text-danger fw-bold'>Upload failed. Please check your connection.</span>`;
+            };
+
+            xhr.send(formData);
+        });
+    </script>
+}
