@@ -1,32 +1,26 @@
-﻿/* 
-   Дефиниране на променливи (light);
-*/
+﻿/* Light theme (default) */
 :root {
-    --bg: #fff;
-    --fg: #111;
-    --card-bg: #f5f5f5;
+    --bg: #f1d7e4; /* main background pink */
+    --fg: #111; /* dark text */
+    --card-bg: #eaadcc; /* darker pink for navbar/footer/cards#e5a7c6 #d786ae #f5c4d9 #f5c1d7 #e0a2c1 #ebb8d2  */
     --link: #007bff;
     --border: #ddd;
     --muted: #6c757d;
     --invert: 0;
 }
 
-/*
-    Тъмна тема: презаписване
-*/
+/* Dark theme */
 body[data-theme="dark"] {
     --bg: #121212;
-    --fg: #fff;
-    --card-bg: #1e1e1e;
+    --fg: #ff7fbf; /* bright pink text */
+    --card-bg: #1e1e1e; /* dark panels */
     --link: #66ccff;
     --border: #333;
     --muted: var(--fg);
     --invert: 1;
 }
 
-/*
-   Основни стилове
-*/
+/* Base */
 body {
     margin: 0;
     font-family: sans-serif;
@@ -34,18 +28,34 @@ body {
     color: var(--fg);
 }
 
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+    a:hover, a:focus {
+        color: var(--link);
+        text-decoration: underline;
+    }
+
+/* Navbar, Footer, Cards */
 .navbar, footer, .card {
-    background-color: var(--card-bg);
+    background-color: var(--card-bg) !important;
     color: var(--fg);
     border-color: var(--border);
 }
+
+/* Overriding bootstraps background for the navbar which is */
+    .navbar.navbar-light,
+    .navbar.navbar-dark {
+        background-color: var(--card-bg);
+    }
 
     .navbar a {
         color: var(--fg);
     }
 
-        .navbar a:hover,
-        .navbar a:focus {
+        .navbar a:hover, .navbar a:focus {
             color: var(--link);
         }
 
@@ -53,6 +63,7 @@ body {
     filter: invert(var(--invert));
 }
 
+/* Dropdown */
 .custom-dropdown,
 .custom-dropdown .dropdown-item {
     background-color: var(--card-bg);
@@ -64,6 +75,7 @@ body {
         background-color: var(--border);
     }
 
+/* Buttons */
 .btn-outline-primary {
     border-color: var(--link);
     color: var(--link);
@@ -74,9 +86,7 @@ body {
         color: #fff;
     }
 
-/* 
-    Коментари: заглавия и дати 
-*/
+/* Comments */
 .comments-section .comment-author {
     font-weight: bold;
 }

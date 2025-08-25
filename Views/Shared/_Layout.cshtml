@@ -9,11 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@title</title>
 
+    <!-- Bootstrap & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="~/css/site.css" rel="stylesheet" />
+
+    <!-- Site CSS with versioning to prevent caching -->
+    <!-- ASP.NET automatically generates a hash from the file contents, so every time you change the file, the hash changes.-->
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
 </head>
-<body data-theme="dark" class="d-flex flex-column min-vh-100">
+<body data-theme="light" class="d-flex flex-column min-vh-100">
     <header>
         <nav id="mainNavbar" class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -23,7 +27,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <!-- Left links -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item"><a class="nav-link @(currentPage == "Home" ? "active" : "")" href="/Home/Index">Home</a></li>
                         <li class="nav-item"><a class="nav-link @(currentPage == "Privacy" ? "active" : "")" href="/Home/Privacy">Privacy</a></li>
@@ -31,19 +34,16 @@
                         <li class="nav-item"><a class="nav-link @(currentPage == "Downloads" ? "active" : "")" href="/Downloads/Index">Downloads</a></li>
                     </ul>
 
-                    <!-- Right user menu + theme toggle -->
                     <ul class="navbar-nav align-items-center">
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-user-circle"></i> @User.Identity.Name
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="userMenu">
                                     <li><a class="dropdown-item" asp-controller="Profile" asp-action="Index">Profile</a></li>
                                     <li><a class="dropdown-item" asp-controller="MyGallery" asp-action="Index">My Gallery</a></li>
-                                    @*<li><a class="dropdown-item" href="/Profile/Index">Profile</a></li>*@
                                     <li><hr class="dropdown-divider" /></li>
                                     <li>
                                         <form asp-area="Identity" asp-page="/Account/Logout" method="post">
@@ -61,12 +61,8 @@
                         }
                         else
                         {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
                             <li class="nav-item ms-2">
                                 <button id="themeToggle" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-moon me-1" id="themeIcon"></i> Toggle Theme
@@ -93,44 +89,38 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme Switcher -->
     <script>
         (function() {
             const body = document.body;
             const icon = document.getElementById('themeIcon');
             const navbar = document.getElementById('mainNavbar');
-            const footer = document.getElementById('mainFooter');
 
-            function updateNavbar(theme) {
+            function applyTheme(theme) {
+                body.setAttribute('data-theme', theme);
+                if(icon) icon.className = theme === 'dark' ? 'fas fa-moon me-1' : 'fas fa-sun me-1';
+                localStorage.setItem('theme', theme);
+
                 navbar.classList.toggle('navbar-dark', theme === 'dark');
                 navbar.classList.toggle('navbar-light', theme === 'light');
                 navbar.classList.toggle('bg-dark', theme === 'dark');
                 navbar.classList.toggle('bg-light', theme === 'light');
             }
 
-            function updateFooter(theme) {
-                footer.style.backgroundColor = getComputedStyle(body).getPropertyValue('--card-bg');
-                footer.style.color = getComputedStyle(body).getPropertyValue('--text-color');
-            }
-
-            function applyTheme(theme) {
-                body.setAttribute('data-theme', theme);
-                if (icon) icon.className = theme === 'dark' ? 'fas fa-moon me-1' : 'fas fa-sun me-1';
-                localStorage.setItem('theme', theme);
-                updateNavbar(theme);
-                updateFooter(theme);
-            }
-
             document.addEventListener('DOMContentLoaded', () => {
-                applyTheme(localStorage.getItem('theme') || 'dark');
+                // Apply saved theme || default
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                applyTheme(savedTheme);
+
                 const btn = document.getElementById('themeToggle');
-                if (btn) 
-                {
-                            btn.addEventListener('click', (event) => {
-                        event.stopPropagation(); // 🛑 предотвратява затварянето на dropdown-а
+                if(btn){
+                    btn.addEventListener('click', () => {
                         const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
                         applyTheme(next);
-                });
+                    });
                 }
             });
         })();
