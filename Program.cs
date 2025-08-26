@@ -37,6 +37,29 @@ app.UseAuthentication();  // Enable Authentication middleware
 app.UseAuthorization();   // Enable Authorization middleware
 
 app.MapControllerRoute(
+    name: "about",
+    pattern: "about",
+    defaults: new { controller = "Home", action = "About" });
+
+app.MapControllerRoute(
+    name: "contact",
+    pattern: "contact",
+    defaults: new { controller = "Home", action = "Contact" });
+
+app.MapControllerRoute(
+    name: "privacy",
+    pattern: "privacy",
+    defaults: new { controller = "Home", action = "Privacy" });
+
+app.MapControllerRoute(
+    name: "downloads",
+    pattern: "downloads",
+    defaults: new { controller = "Downloads", action = "Index" });
+
+//app.MapControllerRoute(
+//    name: "")
+// Default fallback for both if no controller is in the URL and almost guarantee that URL wil find a controller by pattern matcher
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

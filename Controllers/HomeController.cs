@@ -25,5 +25,17 @@ namespace MyWebsite1.Controllers
             ViewData["CurrentPage"] = "Privacy";
             return View();
         }
+
+        public IActionResult About()
+        {
+            ViewData["CurrentPage"] = "About us";
+            return View();
+        }
+
+        public IActionResult Contacts()
+        {
+            ViewData["CurrentPage"] = "Contact us";
+            return View();
+        }
     }
 }

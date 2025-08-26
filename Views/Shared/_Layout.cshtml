@@ -30,10 +30,11 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item"><a class="nav-link @(currentPage == "Home" ? "active" : "")" href="/Home/Index">Home</a></li>
                         <li class="nav-item"><a class="nav-link @(currentPage == "Privacy" ? "active" : "")" href="/Home/Privacy">Privacy</a></li>
+                        <li class="nav-item"><a class="nav-link @(currentPage == "Contacts" ? "active" : "")" href="/Home/Contacts">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link @(currentPage == "About" ? "active" : "")" href="/Home/About">About</a></li>
                         <li class="nav-item"><a class="nav-link @(currentPage == "Browse Feed" ? "active" : "")" href="/Gallery/Feed">Browse Feed</a></li>
                         <li class="nav-item"><a class="nav-link @(currentPage == "Downloads" ? "active" : "")" href="/Downloads/Index">Downloads</a></li>
                     </ul>
-
                     <ul class="navbar-nav align-items-center">
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -82,10 +83,18 @@
     <footer id="mainFooter" class="text-center py-3 mt-auto">
         <div class="container">
             <small>&copy; @DateTime.Now.Year MyWebsite1 | All rights reserved</small>
+            
+            <div class="d-flex justify-content-center gap-3 mt-2">
             @if (currentPage != "Privacy")
             {
-                <div><a href="@Url.Action("Privacy", "Home")">Privacy Policy</a></div>
+                <a href="@Url.Action("Privacy", "Home")">Privacy Policy</a>
             }
+                <li class="nav-item">
+                    <!--<a class="nav-link @(currentPage == "Contacts" ? "active" : "")" href="/Home/Contacts">Contacts</a>-->
+                    <!--to do fix-->
+                    <a class="text-decoration-none @(currentPage == "Contacts" ? "active" : "")" href="/Home/Contacts">Contacts</a>
+                </li>
+            </div>
         </div>
     </footer>
 
