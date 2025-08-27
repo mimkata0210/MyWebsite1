@@ -28,13 +28,13 @@ namespace MyWebsite1.Controllers
 
         public IActionResult About()
         {
-            ViewData["CurrentPage"] = "About us";
+            ViewData["CurrentPage"] = "About";
             return View();
         }
 
         public IActionResult Contacts()
         {
-            ViewData["CurrentPage"] = "Contact us";
+            ViewData["CurrentPage"] = "Contacts";
             return View();
         }
     }

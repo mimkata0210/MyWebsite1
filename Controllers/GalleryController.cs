@@ -18,6 +18,7 @@ public class GalleryController : Controller
 
     public IActionResult Feed()
     {
+        ViewData["CurrentPage"] = "Browse Feed";
         var photos = _context.Photos.Include(p => p.User).OrderByDescending(p => p.DateCreated).ToList(); // вика от базата чрез _context.Photos, Include(p=>p.User) - зарежда свързания потребител,
                                                                                                           // извивка ToList() - изпълнява заявката и връща резултатите като списък.
         return View(photos);
