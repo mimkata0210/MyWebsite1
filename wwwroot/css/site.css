@@ -7,7 +7,8 @@
     --border: #ddd;
     --muted: #6c757d;
     --invert: 0;
-    --active-link: #fff;
+    --footer-link: #8d8c8f;
+    --active-link: #111;
 }
 
 /* Dark theme */
@@ -30,56 +31,57 @@ body {
     color: var(--fg);
 }
 
-a {
-    color: var(--link);
-    text-decoration: none;
+    /* footer links */
+    footer a {
+        color: var(--footer-link);
+        text-decoration: none;
+    }
+
+        footer a:hover,
+        footer a:focus {
+            color: var(--link);
+            text-decoration: underline;
+        }
+
+
+/* Navbar links */
+.navbar a {
+    color: var(--fg); /* dark pink text */
 }
 
-    a:hover, a:focus {
+    .navbar a:hover,
+    .navbar a:focus {
         color: var(--link);
     }
 
 /* Navbar, Footer, Cards */
 .navbar, footer, .card {
     background-color: var(--card-bg) !important;
-    color: var(--fg);
+    color: var(--fg) !important;
     border-color: var(--border);
 }
 
-/* Overriding bootstraps background for the navbar which is */
+    /* Overriding bootstraps background for the navbar which is */
     .navbar.navbar-light,
     .navbar.navbar-dark {
         background-color: var(--card-bg);
-    }
-
-    .navbar a {
-        color: var(--fg);
     }
 
 .navbar-toggler-icon {
     filter: invert(var(--invert));
 }
 
-    .navbar a:hover,
-    .navbar a:focus,
-    footer a:hover {
-        color: var(--link);
-    }
+/* Active link selected */
+#mainNavBar a.active, footer a.active 
+{
+    color: var(--active-link);
+}
 
-    /* Active link selected */
-    body[data-theme="light"] #mainNavbar a.active {
-        color: var(--active-link);
-    }
+footer a.active {
+    color: var(--active-link-dark);
+}
 
-    body[data-theme="dark"] .navbar .navbar-brand.active {
-        color: var(--active-link);
-    }
-
-    footer a.active {
-        color: var(--active-link);
-    }
-
-    /* Logo */
+/* Logo */
 .navbar .navbar-brand {
     transition: color 0.6s ease-in-out;
 }

@@ -212,7 +212,7 @@
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAE8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-02-06T08:54:51.848Z",
               "EditorCaption": ""
@@ -225,7 +225,7 @@
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAmwDIAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCUAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-01T15:13:46.883Z",
               "EditorCaption": ""
@@ -240,8 +240,7 @@
               "RelativeToolTip": "Controllers\\DownloadsController.cs",
               "ViewState": "AgIAAGQAAAAAAAAAAAAwwIMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T21:54:47.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-01T21:54:47.901Z"
             },
             {
               "$type": "Document",
@@ -265,8 +264,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T15:14:08.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-01T15:14:08.879Z"
             },
             {
               "$type": "Document",
@@ -302,8 +300,7 @@
               "RelativeToolTip": "Controllers\\GalleryController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T15:14:56.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-01T15:14:56.817Z"
             },
             {
               "$type": "Document",
