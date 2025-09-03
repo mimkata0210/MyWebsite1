@@ -2,7 +2,7 @@
 :root {
     --bg: #f1d7e4; /* main background pink */
     --fg: #111; /* dark text */
-    --card-bg: #eaadcc; /* darker pink for navbar/footer/cards#e5a7c6 #d786ae #f5c4d9 #f5c1d7 #e0a2c1 #ebb8d2  */
+    --card-bg: #eaadcc; /* darker pink for navbar/footer/cards#e5a7c6 #d786ae #f5c4d9 #f5c1d7 #e0a2c1 #ebb8d2 */
     --link: #007bff;
     --border: #ddd;
     --muted: #6c757d;
@@ -20,6 +20,7 @@ body[data-theme="dark"] {
     --border: #333;
     --muted: var(--fg);
     --invert: 1;
+    --footer-link: #aaa;
     --active-link: #fff;
 }
 
@@ -29,64 +30,99 @@ body {
     font-family: sans-serif;
     background-color: var(--bg);
     color: var(--fg);
+    transition: background-color 0.3s ease;
 }
 
-    /* footer links */
-    footer a {
-        color: var(--footer-link);
-        text-decoration: none;
+    /* Sidebar open effect for both themes */
+    body.sidebar-open main,
+    body.sidebar-open footer {
+        filter: brightness(0.85);
+        pointer-events: none;
+        transition: filter 0.3s ease;
     }
 
-        footer a:hover,
-        footer a:focus {
-            color: var(--link);
-            text-decoration: underline;
-        }
-
-
-/* Navbar links */
-.navbar a {
-    color: var(--fg); /* dark pink text */
+/* Sidebar overlay for Razer-style */
+.sidebar-overlay {
+    position: fixed;
+    top: 56px; /* below navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background-color: rgba(0,0,0,0.7); /* fades in */
+    backdrop-filter: blur(1px); /* slight blur */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    z-index: 1050; /* below sidebar */
 }
 
-    .navbar a:hover,
-    .navbar a:focus {
+/* fade */
+body.sidebar-open .sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.sidebar-open {
+    overflow: hidden; /* disables scrolling */
+}
+
+/* Footer */
+footer a {
+    color: var(--footer-link);
+    text-decoration: none;
+}
+
+    footer a:hover,
+    footer a:focus {
         color: var(--link);
+        text-decoration: underline;
     }
 
-/* Navbar, Footer, Cards */
-.navbar, footer, .card {
+    footer a.active {
+        color: var(--active-link);
+    }
+
+/* Navbar, footer, cards */
+.navbar,
+footer,
+.card {
     background-color: var(--card-bg) !important;
     color: var(--fg) !important;
     border-color: var(--border);
 }
 
-    /* Overriding bootstraps background for the navbar which is */
     .navbar.navbar-light,
     .navbar.navbar-dark {
         background-color: var(--card-bg);
     }
 
+    .navbar .navbar-brand {
+        transition: color 0.3s ease-in-out;
+    }
+
+        .navbar .navbar-brand:hover {
+            color: var(--link);
+        }
+
+    .navbar a {
+        color: var(--fg);
+    }
+
+        .navbar a:hover,
+        .navbar a:focus {
+            color: var(--link);
+        }
+
+/* Active link */
+#mainNavBar a.active {
+    color: var(--active-link);
+}
+
+/* Hamburger menu */
 .navbar-toggler-icon {
     filter: invert(var(--invert));
 }
 
-/* Active link selected */
-#mainNavBar a.active, footer a.active 
-{
-    color: var(--active-link);
-}
-
-footer a.active {
-    color: var(--active-link-dark);
-}
-
-/* Logo */
-.navbar .navbar-brand {
-    transition: color 0.6s ease-in-out;
-}
-
-/* hamburger menu */
 .navbar-toggler:hover .navbar-toggler-icon {
     filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(300deg);
     opacity: 0.8;
@@ -98,11 +134,16 @@ footer a.active {
     box-shadow: none;
 }
 
-/* Dropdown */
+/* Dropdown menu */
 .custom-dropdown,
 .custom-dropdown .dropdown-item {
     background-color: var(--card-bg);
     color: var(--fg);
+}
+
+.custom-dropdown {
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
     .custom-dropdown .dropdown-item:hover,
@@ -110,6 +151,54 @@ footer a.active {
         background-color: var(--border);
         color: var(--link);
     }
+
+/* Sidebar (mobile) */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        width: clamp(220px, 30vw, 300px);
+        background-color: var(--card-bg);
+        box-shadow: 2px 0 12px rgba(0,0,0,0.25);
+        position: fixed;
+        top: 56px; /* below navbar */
+        left: 0;
+        bottom: 0;
+        height: calc(100vh - 56px);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1055; /* above overlay */
+        display: flex;
+        flex-direction: column; /* vertical menu */
+    }
+
+        .navbar-collapse.show {
+            transform: translateX(0);
+        }
+
+        .navbar-collapse .nav-link,
+        .navbar-collapse .dropdown-menu .dropdown-item {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+    /* Navbar brand centered on mobile */
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Hamburger button above overlay/sidebar */
+    .navbar-toggler {
+        position: relative;
+        z-index: 1060; /* above overlay and sidebar */
+    }
+
+    /* Mobile - first dropdown/Login/Register order */
+    .navbar-nav.align-items-center {
+        order: -1; /* negative order = first in mobile */
+        margin-left: 0;
+    }
+}
 
 /* Buttons */
 .btn-outline-primary {
@@ -122,7 +211,7 @@ footer a.active {
         color: #fff;
     }
 
-/* Comments */
+/* Comments section */
 .comments-section .comment-author {
     font-weight: bold;
 }

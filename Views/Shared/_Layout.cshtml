@@ -38,11 +38,13 @@
                         <li class="nav-item"><a class="nav-link @(currentPage == "Browse Feed" ? "active" : "")" href="/Gallery/Feed">Browse Feed</a></li>
                         <li class="nav-item"><a class="nav-link @(currentPage == "Downloads" ? "active" : "")" href="/Downloads/Index">Downloads</a></li>
                     </ul>
+
+                    @* Auth / Login/Register dropdown - rightmost on desktop, first on mobile *@
                     <ul class="navbar-nav align-items-center">
                         @if (User.Identity.IsAuthenticated)
                         {
                             // Dropdown menu
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown mobile-first ms-lg-auto">
                                 <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-user-circle"></i> @User.Identity.Name
                                 </a>
@@ -66,9 +68,9 @@
                         }
                         else
                         {
-                            <li class="nav-item"><a class="nav-link @(Context.Request.Path.Value == "/Identity/Account/Login" ? "active" : "")" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
-                            <li class="nav-item"><a class="nav-link @(Context.Request.Path.Value == "/Identity/Account/Register" ? "active" : "")" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
-                            <li class="nav-item ms-2">
+                            <li class="nav-item mobile-first ms-lg-auto"><a class="nav-link @(Context.Request.Path.Value == "/Identity/Account/Login" ? "active" : "")" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                            <li class="nav-item mobile-first"><a class="nav-link @(Context.Request.Path.Value == "/Identity/Account/Register" ? "active" : "")" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                            <li class="nav-item ms-2 mobile-first">
                                 <button id="themeToggle" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-moon me-1" id="themeIcon"></i> Toggle Theme
                                 </button>
@@ -85,7 +87,7 @@
     </main>
 
     <!-- Cookies Consent Popup -->
-    <div id="cookieConsent" class="position-fixed bottom-0 end-0 me-4 mb-3 p-3 border rounded shadow bg-light" style="max-width: 400px; z-index:1050; display:none;">
+    <div id="cookieConsent" class="position-fixed bottom-0 end-0 me-4 mb-3 p-3 border rounded shadow bg-light" style="max-width: 400px; z-index:1085; display:none;">
         <p class="mb-2 small">
             We use only essential cookies and local storage to keep you logged in and remember your preferences. No tracking or advertising cookies are used without your consent.
         </p>
@@ -97,19 +99,10 @@
 
     <footer id="mainFooter" class="text-center py-2 mt-auto">
         <div class="container">
-            
             <nav class="d-flex justify-content-center gap-4 mt-1 mb-2">
-            @*  
-            <!--checks if link should be rendered or not-->
-            @if (currentPage != "Privacy") { <a href="@Url.Action("Privacy", "Home")">Privacy Policy</a> } 
-
-            <a href="@Url.Action("Privacy", "Home")" class="@(currentPage == "Privacy" ? "active" : "")">Privacy Policy</a> 
-            <a href="/Home/Contacts" class="@(currentPage == "Contacts" ? "active" : "")">Contacts</a>
-            *@ 
-            <a href="@Url.Action("Privacy", "Home")" style="font-size:0.96rem;">Privacy Policy</a>
+                <a href="@Url.Action("Privacy", "Home")" style="font-size:0.96rem;">Privacy Policy</a>
                 <a href="/Home/Contacts" style="font-size:0.96rem;">Contacts</a>
             </nav>
-
             <hr class="my-1" />
             <small>&copy; @DateTime.Now.Year MyWebsite1 | All rights reserved</small>
         </div>
@@ -118,41 +111,105 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Theme & Cookies JS -->
+    <!-- Theme, Sidebar, Cookies JS -->
     <script>
-            document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
+            // DOM Elements
             const body = document.body;
-            const icon = document.getElementById('themeIcon');
             const navbar = document.getElementById('mainNavbar');
+            const icon = document.getElementById('themeIcon');
             const popup = document.getElementById('cookieConsent');
             const acceptBtn = document.getElementById('acceptCookies');
             const declineBtn = document.getElementById('declineCookies');
-            const themeToggle = document.getElementById('themeToggle');
+            const themeBtn = document.getElementById('themeToggle');
+            const dropdownToggle = document.getElementById('userMenu');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
 
-            // Apply saved theme
+            // Sidebar overlay
+            const sidebarOverlay = document.createElement('div');
+            sidebarOverlay.className = 'sidebar-overlay';
+            document.body.appendChild(sidebarOverlay);
+
+            // Theme switch
             const savedTheme = localStorage.getItem('theme') || 'light';
-            body.setAttribute('data-theme', savedTheme);
-            icon.className = savedTheme === 'dark' ? 'fas fa-moon me-1' : 'fas fa-sun me-1';
-            navbar.classList.toggle('navbar-dark', savedTheme === 'dark');
-            navbar.classList.toggle('navbar-light', savedTheme === 'light');
-            navbar.classList.toggle('bg-dark', savedTheme === 'dark');
-            navbar.classList.toggle('bg-light', savedTheme === 'light');
+            applyTheme(savedTheme);
 
-            // Theme toggle
-            themeToggle?.addEventListener('click', () => {
-                const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                body.setAttribute('data-theme', next);
-                icon.className = next === 'dark' ? 'fas fa-moon me-1' : 'fas fa-sun me-1';
-                navbar.classList.toggle('navbar-dark', next === 'dark');
-                navbar.classList.toggle('navbar-light', next === 'light');
-                navbar.classList.toggle('bg-dark', next === 'dark');
-                navbar.classList.toggle('bg-light', next === 'light');
-                localStorage.setItem('theme', next);
+            function applyTheme(theme) {
+                body.setAttribute('data-theme', theme);
+                // theme icon
+                icon.className = theme === 'dark' ? 'fas fa-moon me-1' : 'fas fa-sun me-1';
+                // navbar classes based on theme
+                navbar.classList.toggle('navbar-dark', theme === 'dark');
+                navbar.classList.toggle('navbar-light', theme === 'light');
+                navbar.classList.toggle('bg-dark', theme === 'dark');
+                navbar.classList.toggle('bg-light', theme === 'light');
+                // sidebar overlay color (fade) based on theme
+                sidebarOverlay.style.backgroundColor = theme === 'dark'
+                    ? 'rgba(0,0,0,0.2)'
+                    : 'rgba(255,255,255,0.2)';
+                // save theme to localStorage
+                localStorage.setItem('theme', theme);
+            }
+
+            // Theme toggle button
+            themeBtn?.addEventListener('click', (e) => {
+                const current = body.getAttribute('data-theme') || 'light';
+                applyTheme(current === 'dark' ? 'light' : 'dark');
+                // Keep dropdown open when toggling theme
+                // --- issue - dropdown menu structure looks just as ugly as me;
+                if (dropdownToggle) {
+                    e.stopPropagation(); // prevents bubble up (the click event reach its parent) so it doesnt close the menu and break the ux;
+                    bootstrap.Dropdown.getOrCreateInstance(dropdownToggle).show();
+                }
             });
 
-            // Cookies popup
-            if(localStorage.getItem('cookiesAccepted') !== 'true') {
+            // Handle sidebar collapse and overlay
+            if (navbarCollapse) {
+                navbarCollapse.addEventListener('show.bs.collapse', () => {
+                    body.classList.add('sidebar-open');
+                    sidebarOverlay.style.opacity = '1';
+                    sidebarOverlay.style.visibility = 'visible';
+                });
+                navbarCollapse.addEventListener('hidden.bs.collapse', () => {
+                    body.classList.remove('sidebar-open');
+                    sidebarOverlay.style.opacity = '0';
+                    sidebarOverlay.style.visibility = 'hidden';
+                });
+            }
+
+            // Click overlay to close sidebar
+            sidebarOverlay.addEventListener('click', () => {
+                bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+            });
+
+            // Close the sidebar & dropdown menu when screen becomes large
+            function checkNavbarOnResize() {
+                // * Bootstrap lg breakpoint = 992px
+                if (window.innerWidth >= 992) {
+                    // Close the sidebar if open
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                    if (bsCollapse && navbarCollapse.classList.contains('show')) {
+                        bsCollapse.hide();
+                    }
+
+                    // Close the dropdown if open
+                    if (dropdownToggle) {
+                        const bsDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+                        if (bsDropdown && dropdownToggle.classList.contains('show')) {
+                            bsDropdown.hide();
+                        }
+                    }
+                }
+            }
+
+            // Listen to the window resize and check initial state
+            window.addEventListener('resize', checkNavbarOnResize);
+            checkNavbarOnResize(); // initial check
+
+            // Cookie consent popup handling
+            if (popup && localStorage.getItem('cookiesAccepted') !== 'true') {
                 popup.style.display = 'block';
+                popup.style.zIndex = '1085';
             }
 
             acceptBtn?.addEventListener('click', () => {
