@@ -18,10 +18,29 @@ public class DownloadsController : Controller
         _userManager = userManager;
     }
 
-    // list of downloads
+    /*// list of downloads
     public IActionResult Index()
     {
         var downloads = _context.Downloads.ToList(); // Get all downloads
+        return View(downloads);
+    }*/
+
+
+    // added paging
+    public IActionResult Index(int page = 1, int pageSize = 10)
+    {
+        var totalDownloads = _context.Downloads.Count();
+        var totalPages = (int)Math.Ceiling(totalDownloads / (double)pageSize);
+
+        var downloads = _context.Downloads
+            .OrderByDescending(d => d.DateCreated) // новите най-отгоре
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        ViewBag.CurrentPageNumber = page;
+        ViewBag.TotalPages = totalPages;
+
         return View(downloads);
     }
 

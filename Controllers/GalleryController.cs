@@ -16,11 +16,35 @@ public class GalleryController : Controller
         _context = context;
     }
 
-    public IActionResult Feed()
+    /* делете латер - old v
+     * public IActionResult Feed()
     {
         ViewData["CurrentPage"] = "Browse Feed";
         var photos = _context.Photos.Include(p => p.User).OrderByDescending(p => p.DateCreated).ToList(); // вика от базата чрез _context.Photos, Include(p=>p.User) - зарежда свързания потребител,
                                                                                                           // извивка ToList() - изпълнява заявката и връща резултатите като списък.
+        return View(photos);
+    }
+    */
+
+    // Added paging - its either that or lazy loading
+    public IActionResult Feed(int page = 1, int pageSize = 10)
+    {
+        ViewData["CurrentPage"] = "Browse Feed";
+
+        var photos = _context.Photos
+            .Include(p => p.User)
+            .OrderByDescending(p => p.DateCreated)
+            .Skip((page -1) * pageSize) // скип превиоус лоадс
+            .Take(pageSize)
+            .ToList();
+
+        // Number of records to calculate the entire page
+        var totalPhotos = _context.Photos.Count();
+        var totalPages = (int)Math.Ceiling(totalPhotos / (double)pageSize);
+
+        ViewBag.CurrentPageNumber = page;
+        ViewBag.TotalPages = totalPages;
+
         return View(photos);
     }
 

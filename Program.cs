@@ -21,6 +21,14 @@ builder.Services.Configure<FormOptions>(options =>
 
 var app = builder.Build();
 
+// Warm-up EF Core model at startup (fixes first-load slowness)
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    // dummy request that compiles model from EFCore
+    db.Photos.Take(1).ToList();
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

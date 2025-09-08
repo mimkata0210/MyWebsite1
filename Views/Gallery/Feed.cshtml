@@ -1,46 +1,63 @@
-﻿@{
-    ViewData["Title"] = "Shared files";
+﻿@model List<MyWebsite1.Models.Photo>
+@{
+    ViewData["Title"] = "Browse Feed";
 }
 
 <div class="container mt-4">
     <h1>@ViewData["Title"]</h1>
 
     <div class="row">
-        @foreach (var item in Model)
+        @foreach (var photo in Model)
         {
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <!-- Conditional check for displaying image or file -->
-                    @if (item is MyWebsite1.Models.Photo photo && photo.ImageData != null && photo.ImageData.Length > 0)
+                    @* Display image if it exists *@
+                    @if (photo.ImageData != null && photo.ImageData.Length > 0)
                     {
-                        <!-- Display image -->
-                        <img src="data:image;base64,@Convert.ToBase64String(photo.ImageData)" class="card-img-top" alt="@photo.Title" />
+                        <img src="data:image;base64,@Convert.ToBase64String(photo.ImageData)" 
+                             class="card-img-top" 
+                             alt="@photo.Title"
+                             loading="lazy" />
                         <div class="card-body">
                             <h5 class="card-title">@photo.Title</h5>
                             <p class="card-text">@photo.DateCreated.ToString("MM/dd/yyyy")</p>
                             <a href="@Url.Action("Details", "Gallery", new { id = photo.Id })" class="btn btn-primary">View Photo</a>
                         </div>
                     }
-                    else if (item is MyWebsite1.Models.Download download)
-                    {
-                        <!-- Display file info -->
-                        <div class="card-body">
-                            <h5 class="card-title">@download.Title</h5>
-                            <p class="card-text"><strong>Description:</strong> @download.Description</p>
-                            <p class="card-text"><strong>File Type:</strong> @download.FileType</p>
-                            <p class="card-text"><strong>Uploaded on:</strong> @download.DateCreated.ToString("MM/dd/yyyy")</p>
-                            <a href="@Url.Action("Download", "Downloads", new { id = download.Id })" class="btn btn-primary">Download File</a>
-                        </div>
-                    }
                     else
                     {
-                        <!-- If neither is a Photo nor a Download -->
                         <div class="card-body">
-                            <p>Invalid item type.</p>
+                            <p>No image available.</p>
                         </div>
                     }
                 </div>
             </div>
         }
     </div>
+
+    @* Paging navigation *@
+    <nav>
+        <ul class="pagination justify-content-center">
+            @if (ViewBag.CurrentPageNumber > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Feed", new { page = ViewBag.CurrentPageNumber - 1 })">Previous</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPageNumber ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Feed", new { page = i })">@i</a>
+                </li>
+            }
+
+            @if (ViewBag.CurrentPageNumber < ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Feed", new { page = ViewBag.CurrentPageNumber + 1 })">Next</a>
+                </li>
+            }
+        </ul>
+    </nav>
 </div>
