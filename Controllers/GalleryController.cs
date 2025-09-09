@@ -27,25 +27,24 @@ public class GalleryController : Controller
     */
 
     // Added paging - its either that or lazy loading
-    public IActionResult Feed(int page = 1, int pageSize = 10)
+    public IActionResult Feed(int page = 1, int pageSize = 12)
     {
-        ViewData["CurrentPage"] = "Browse Feed";
+        var totalItems = _context.Photos.Count();
+        var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
 
-        var photos = _context.Photos
-            .Include(p => p.User)
-            .OrderByDescending(p => p.DateCreated)
-            .Skip((page -1) * pageSize) // скип превиоус лоадс
+        var items = _context.Photos
+            .OrderByDescending(g => g.DateCreated)
+            .Skip((page - 1) * pageSize)
             .Take(pageSize)
             .ToList();
 
-        // Number of records to calculate the entire page
-        var totalPhotos = _context.Photos.Count();
-        var totalPages = (int)Math.Ceiling(totalPhotos / (double)pageSize);
-
+        // Paging ViewBag-и
         ViewBag.CurrentPageNumber = page;
         ViewBag.TotalPages = totalPages;
+        ViewBag.PagingAction = "Feed";
+        ViewBag.PagingController = "Gallery";
 
-        return View(photos);
+        return View(items);
     }
 
     public IActionResult Details(int id)

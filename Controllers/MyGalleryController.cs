@@ -17,14 +17,26 @@ public class MyGalleryController : Controller
         _userManager = userManager;
     }
 
-    // Show the user's gallery (only their photos)
-    public IActionResult Index()
+    // dynamic paging
+    public IActionResult Index(int page = 1, int pageSize = 20)
     {
-        var userId = _userManager.GetUserId(User);
-        var photos = _context.Photos.Where(p => p.UserId == userId).ToList();
+        var totalPhotos = _context.Photos.Count();
+        var totalPages = (int)Math.Ceiling(totalPhotos / (double)pageSize);
+
+        var photos = _context.Photos
+            .OrderByDescending(c => c.DateCreated)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        ViewBag.CurrentPageNumber = page;
+        ViewBag.TotalPages = totalPages;
+        ViewBag.PagingAction = "Index";
+        ViewBag.PagingController = "MyGallery";
 
         return View(photos);
     }
+
 
     // Show the photo upload form
     [HttpGet]

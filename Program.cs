@@ -25,8 +25,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    // dummy request that compiles model from EFCore
-    db.Photos.Take(1).ToList();
+    db.Photos.Take(1).ToList(); // dummy query to compile model
 }
 
 // Configure the HTTP request pipeline.
@@ -41,36 +40,42 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();  // Enable Authentication middleware
-app.UseAuthorization();   // Enable Authorization middleware
+app.UseAuthentication();
+app.UseAuthorization();
 
+// Explicit Home route for /
+app.MapControllerRoute(
+    name: "home",
+    pattern: "",
+    defaults: new { controller = "Home", action = "Index" });
+
+// Clean URLs for Home actions
 app.MapControllerRoute(
     name: "about",
-    pattern: "about",
+    pattern: "About",
     defaults: new { controller = "Home", action = "About" });
 
 app.MapControllerRoute(
-    name: "contact",
-    pattern: "contact",
-    defaults: new { controller = "Home", action = "Contact" });
+    name: "contacts",
+    pattern: "Contacts",
+    defaults: new { controller = "Home", action = "Contacts" });
 
 app.MapControllerRoute(
     name: "privacy",
-    pattern: "privacy",
+    pattern: "Privacy",
     defaults: new { controller = "Home", action = "Privacy" });
 
+// Other controllers
 app.MapControllerRoute(
     name: "downloads",
-    pattern: "downloads",
+    pattern: "Downloads",
     defaults: new { controller = "Downloads", action = "Index" });
 
-//app.MapControllerRoute(
-//    name: "")
-// Default fallback for both if no controller is in the URL and almost guarantee that URL wil find a controller by pattern matcher
+// Default fallback
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapRazorPages(); // This enables Identity Pages like Register, Login, etc.
+app.MapRazorPages(); // Identity pages like Login, Register, etc.
 
 app.Run();

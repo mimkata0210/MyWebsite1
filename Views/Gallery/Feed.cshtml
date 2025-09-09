@@ -1,6 +1,7 @@
 ﻿@model List<MyWebsite1.Models.Photo>
 @{
     ViewData["Title"] = "Browse Feed";
+    ViewData["CurrentPage"] = "Browse Feed";
 }
 
 <div class="container mt-4">
@@ -34,30 +35,4 @@
             </div>
         }
     </div>
-
-    @* Paging navigation *@
-    <nav>
-        <ul class="pagination justify-content-center">
-            @if (ViewBag.CurrentPageNumber > 1)
-            {
-                <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Feed", new { page = ViewBag.CurrentPageNumber - 1 })">Previous</a>
-                </li>
-            }
-
-            @for (int i = 1; i <= ViewBag.TotalPages; i++)
-            {
-                <li class="page-item @(i == ViewBag.CurrentPageNumber ? "active" : "")">
-                    <a class="page-link" href="@Url.Action("Feed", new { page = i })">@i</a>
-                </li>
-            }
-
-            @if (ViewBag.CurrentPageNumber < ViewBag.TotalPages)
-            {
-                <li class="page-item">
-                    <a class="page-link" href="@Url.Action("Feed", new { page = ViewBag.CurrentPageNumber + 1 })">Next</a>
-                </li>
-            }
-        </ul>
-    </nav>
 </div>

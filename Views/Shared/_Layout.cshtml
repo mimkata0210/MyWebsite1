@@ -1,10 +1,10 @@
 ﻿@{
+    var path = Context.Request.Path.Value?.ToLower() ?? "/";
     var title = ViewBag.Title ?? "MyWebsite1";
-    var currentPage = ViewData["CurrentPage"] as string;
 }
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,35 +15,32 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Site CSS with versioning to prevent caching -->
-    <!-- ASP.NET automatically generates a hash from the file contents, so every time you change the file, the hash changes.-->
     <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
 </head>
 
 <body data-theme="light" class="d-flex flex-column min-vh-100">
-
     <header>
         <nav id="mainNavbar" class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand @(Context.Request.Path.Value == "/" ? "active" : "")" href="/">MyApp</a>
+                <a class="navbar-brand @(path == "/" ? "active" : "")" href="/">MyApp</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
-                        @*<li class="nav-item"><a class="nav-link @(currentPage == "Home" ? "active" : "")" href="/Home/Index">Home</a></li>*@
-                        <li class="nav-item"><a class="nav-link @(currentPage == "Privacy" ? "active" : "")" href="/Home/Privacy">Privacy</a></li>
-                        <li class="nav-item"><a class="nav-link @(currentPage == "Contacts" ? "active" : "")" href="/Home/Contacts">Contacts</a></li>
-                        <li class="nav-item"><a class="nav-link @(currentPage == "About" ? "active" : "")" href="/Home/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link @(currentPage == "Browse Feed" ? "active" : "")" href="/Gallery/Feed">Browse Feed</a></li>
-                        <li class="nav-item"><a class="nav-link @(currentPage == "Downloads" ? "active" : "")" href="/Downloads/Index">Downloads</a></li>
+                        <li class="nav-item"><a class="nav-link @(path == "/" ? "active" : "")" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link @(path == "/privacy" ? "active" : "")" href="/Privacy">Privacy</a></li>
+                        <li class="nav-item"><a class="nav-link @(path == "/contacts" ? "active" : "")" href="/Contacts">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link @(path == "/about" ? "active" : "")" href="/About">About</a></li>
+                        <li class="nav-item"><a class="nav-link @(path.StartsWith("/gallery/feed") ? "active" : "")" href="/Gallery/Feed">Browse Feed</a></li>
+                        <li class="nav-item"><a class="nav-link @(path.StartsWith("/downloads") ? "active" : "")" href="/Downloads">Downloads</a></li>
                     </ul>
 
-                    @* Auth / Login/Register dropdown - rightmost on desktop, first on mobile *@
+                    <!-- Auth / Login/Register dropdown -->
                     <ul class="navbar-nav align-items-center">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            // Dropdown menu
                             <li class="nav-item dropdown mobile-first ms-lg-auto">
                                 <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-user-circle"></i> @User.Identity.Name
@@ -68,8 +65,8 @@
                         }
                         else
                         {
-                            <li class="nav-item mobile-first ms-lg-auto"><a class="nav-link @(Context.Request.Path.Value == "/Identity/Account/Login" ? "active" : "")" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
-                            <li class="nav-item mobile-first"><a class="nav-link @(Context.Request.Path.Value == "/Identity/Account/Register" ? "active" : "")" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                            <li class="nav-item mobile-first ms-lg-auto"><a class="nav-link @(path == "/identity/account/login" ? "active" : "")" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                            <li class="nav-item mobile-first"><a class="nav-link @(path == "/identity/account/register" ? "active" : "")" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
                             <li class="nav-item ms-2 mobile-first">
                                 <button id="themeToggle" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-moon me-1" id="themeIcon"></i> Toggle Theme
@@ -97,11 +94,55 @@
         </div>
     </div>
 
+    <!-- Paging -->
+    @if (ViewBag.TotalPages != null
+        && ViewBag.CurrentPageNumber != null
+        && !string.IsNullOrEmpty(ViewBag.PagingAction as string)
+        && !string.IsNullOrEmpty(ViewBag.PagingController as string))
+    {
+        <div class="container">
+            <nav class="mt-3">
+                <ul class="pagination justify-content-center">
+                    @if (ViewBag.CurrentPageNumber > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link"
+                               asp-action="@ViewBag.PagingAction"
+                               asp-controller="@ViewBag.PagingController"
+                               asp-route-page="@(ViewBag.CurrentPageNumber - 1)">Previous</a>
+                        </li>
+                    }
+
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == ViewBag.CurrentPageNumber ? "active" : "")">
+                            <a class="page-link"
+                               asp-action="@ViewBag.PagingAction"
+                               asp-controller="@ViewBag.PagingController"
+                               asp-route-page="@i">@i</a>
+                        </li>
+                    }
+
+                    @if (ViewBag.CurrentPageNumber < ViewBag.TotalPages)
+                    {
+                        <li class="page-item">
+                            <a class="page-link"
+                               asp-action="@ViewBag.PagingAction"
+                               asp-controller="@ViewBag.PagingController"
+                               asp-route-page="@(ViewBag.CurrentPageNumber + 1)">Next</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    }
+
+
     <footer id="mainFooter" class="text-center py-2 mt-auto">
         <div class="container">
             <nav class="d-flex justify-content-center gap-4 mt-1 mb-2">
-                <a href="@Url.Action("Privacy", "Home")" style="font-size:0.96rem;">Privacy Policy</a>
-                <a href="/Home/Contacts" style="font-size:0.96rem;">Contacts</a>
+                <a href="/Privacy" style="font-size:0.96rem;">Privacy Policy</a>
+                <a href="/Contacts" style="font-size:0.96rem;">Contacts</a>
             </nav>
             <hr class="my-1" />
             <small>&copy; @DateTime.Now.Year MyWebsite1 | All rights reserved</small>
@@ -114,7 +155,6 @@
     <!-- Theme, Sidebar, Cookies JS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // DOM Elements
             const body = document.body;
             const navbar = document.getElementById('mainNavbar');
             const icon = document.getElementById('themeIcon');
@@ -136,34 +176,24 @@
 
             function applyTheme(theme) {
                 body.setAttribute('data-theme', theme);
-                // theme icon
                 icon.className = theme === 'dark' ? 'fas fa-moon me-1' : 'fas fa-sun me-1';
-                // navbar classes based on theme
                 navbar.classList.toggle('navbar-dark', theme === 'dark');
                 navbar.classList.toggle('navbar-light', theme === 'light');
                 navbar.classList.toggle('bg-dark', theme === 'dark');
                 navbar.classList.toggle('bg-light', theme === 'light');
-                // sidebar overlay color (fade) based on theme
-                sidebarOverlay.style.backgroundColor = theme === 'dark'
-                    ? 'rgba(0,0,0,0.2)'
-                    : 'rgba(255,255,255,0.2)';
-                // save theme to localStorage
+                sidebarOverlay.style.backgroundColor = theme === 'dark' ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)';
                 localStorage.setItem('theme', theme);
             }
 
-            // Theme toggle button
             themeBtn?.addEventListener('click', (e) => {
                 const current = body.getAttribute('data-theme') || 'light';
                 applyTheme(current === 'dark' ? 'light' : 'dark');
-                // Keep dropdown open when toggling theme
-                // --- issue - dropdown menu structure looks just as ugly as me;
                 if (dropdownToggle) {
-                    e.stopPropagation(); // prevents bubble up (the click event reach its parent) so it doesnt close the menu and break the ux;
+                    e.stopPropagation();
                     bootstrap.Dropdown.getOrCreateInstance(dropdownToggle).show();
                 }
             });
 
-            // Handle sidebar collapse and overlay
             if (navbarCollapse) {
                 navbarCollapse.addEventListener('show.bs.collapse', () => {
                     body.classList.add('sidebar-open');
@@ -177,36 +207,24 @@
                 });
             }
 
-            // Click overlay to close sidebar
             sidebarOverlay.addEventListener('click', () => {
                 bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
             });
 
-            // Close the sidebar & dropdown menu when screen becomes large
             function checkNavbarOnResize() {
-                // * Bootstrap lg breakpoint = 992px
                 if (window.innerWidth >= 992) {
-                    // Close the sidebar if open
                     const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (bsCollapse && navbarCollapse.classList.contains('show')) {
-                        bsCollapse.hide();
-                    }
-
-                    // Close the dropdown if open
+                    if (bsCollapse && navbarCollapse.classList.contains('show')) bsCollapse.hide();
                     if (dropdownToggle) {
                         const bsDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
-                        if (bsDropdown && dropdownToggle.classList.contains('show')) {
-                            bsDropdown.hide();
-                        }
+                        if (bsDropdown && dropdownToggle.classList.contains('show')) bsDropdown.hide();
                     }
                 }
             }
 
-            // Listen to the window resize and check initial state
             window.addEventListener('resize', checkNavbarOnResize);
-            checkNavbarOnResize(); // initial check
+            checkNavbarOnResize();
 
-            // Cookie consent popup handling
             if (popup && localStorage.getItem('cookiesAccepted') !== 'true') {
                 popup.style.display = 'block';
                 popup.style.zIndex = '1085';
@@ -217,9 +235,7 @@
                 popup.style.display = 'none';
             });
 
-            declineBtn?.addEventListener('click', () => {
-                popup.style.display = 'none';
-            });
+            declineBtn?.addEventListener('click', () => { popup.style.display = 'none'; });
         });
     </script>
 

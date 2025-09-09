@@ -16,25 +16,21 @@ namespace MyWebsite1.Controllers
 
         public IActionResult Index()
         {
-            ViewData["CurrentPage"] = "Index";
             return View();
         }
 
         public IActionResult Privacy()
         {
-            ViewData["CurrentPage"] = "Privacy";
             return View();
         }
 
         public IActionResult About()
         {
-            ViewData["CurrentPage"] = "About";
             return View();
         }
 
         public IActionResult Contacts()
         {
-            ViewData["CurrentPage"] = "Contacts";
             return View();
         }
     }
