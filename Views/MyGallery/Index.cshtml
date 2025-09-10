@@ -3,20 +3,24 @@
     ViewData["Title"] = "My Gallery";
     ViewData["CurrentPage"] = "My Gallery";
 }
+
 <h2>My Gallery</h2>
 
 <!-- Бутон за качване -->
-<a href="@Url.Action("Create", "MyGallery")" class="btn btn-success mb-3">
+<a href="@Url.Action("Create", "MyGallery")" class="btn btn-pink mb-3">
     <i class="fas fa-upload"></i> Upload Image
 </a>
 
-<div id="photosList">
+<div id="photosList" class="d-flex flex-wrap gap-3">
     @foreach (var photo in Model)
     {
-        <div class="photo-item mb-3" data-id="@photo.Id">
-            <img src="data:image/jpeg;base64,@Convert.ToBase64String(photo.ImageData)" alt="@photo.Title" width="200" />
+        <div class="photo-item text-center" data-id="@photo.Id" style="width: 200px;">
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(photo.ImageData)"
+                 alt="@photo.Title"
+                 class="img-thumbnail mb-2"
+                 style="width: 100%; height: auto;" />
             <p>@photo.Title</p>
-            <button class="btn btn-danger btn-sm delete-photo">Delete</button>
+            <button class="btn btn-outline-pink btn-sm delete-photo">Delete</button>
         </div>
     }
 </div>
@@ -31,8 +35,9 @@
                 var photoId = container.data('id');
 
                 $.ajax({
-                    url: '/MyGallery/Delete/' + photoId,
+                    url: '/MyGallery/Delete',
                     type: 'POST',
+                    data: { id: photoId }, // пращаме id в POST body
                     headers: {
                         'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
                     },

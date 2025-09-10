@@ -3,44 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\downloads\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\downloads\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\controllers\\mygallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:controllers\\mygallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\controllers\\gallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:controllers\\gallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\mygallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\mygallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\gallery\\feed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\gallery\\feed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\controllers\\downloadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:controllers\\downloadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\downloads\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\downloads\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\mygallery\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\mygallery\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\mygallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\mygallery\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\controllers\\mygallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:controllers\\mygallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\gallery\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\gallery\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\downloads\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\downloads\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\downloads\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\downloads\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\home\\contacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\home\\contacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\controllers\\gallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:controllers\\gallerycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,20 +79,20 @@
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\controllers\\downloadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:controllers\\downloadscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\models\\download.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,28 +107,8 @@
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:models\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\gallery\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\gallery\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\downloads\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\downloads\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\downloads\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\downloads\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\mygallery\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\mygallery\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -113,14 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\profile\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|solutionrelative:views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6D5E890-06C6-49C8-B960-82A85669C1B7}|MyWebsite1.csproj|c:\\users\\mimka\\documents\\projects\\mywebsite1\\models\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -197,11 +197,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 15,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
@@ -210,101 +210,111 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-02-06T08:54:46.626Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAwwPQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-01T15:13:46.883Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MyGalleryController.cs",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\MyGalleryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MyGalleryController.cs",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\MyGalleryController.cs*",
-              "RelativeToolTip": "Controllers\\MyGalleryController.cs*",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwCgAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T15:15:31.16Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DownloadsController.cs",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\DownloadsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DownloadsController.cs",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\DownloadsController.cs",
-              "RelativeToolTip": "Controllers\\DownloadsController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T21:54:47.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Downloads\\Index.cshtml",
               "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Index.cshtml",
               "RelativeToolTip": "Views\\Downloads\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-01T15:36:56.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\css\\site.css*",
+              "RelativeToolTip": "wwwroot\\css\\site.css*",
+              "ViewState": "AgIAAPYAAAAAAAAAAAAAAP0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-06T08:54:51.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Feed.cshtml",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Gallery\\Feed.cshtml",
               "RelativeDocumentMoniker": "Views\\Gallery\\Feed.cshtml",
               "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Gallery\\Feed.cshtml",
               "RelativeToolTip": "Views\\Gallery\\Feed.cshtml",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-01T15:36:04.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwFEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "MyGalleryController.cs",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\MyGalleryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MyGalleryController.cs",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\MyGalleryController.cs",
+              "RelativeToolTip": "Controllers\\MyGalleryController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T15:17:51.317Z",
+              "WhenOpened": "2025-02-01T15:15:31.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\MyGallery\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\MyGallery\\Create.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\MyGallery\\Create.cshtml",
+              "RelativeToolTip": "Views\\MyGallery\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T16:40:30.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\MyGallery\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\MyGallery\\Index.cshtml",
               "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\MyGallery\\Index.cshtml",
               "RelativeToolTip": "Views\\MyGallery\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-01T22:02:03.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Profile\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Profile\\Edit.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-22T21:00:13.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "Views\\Profile\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-22T20:31:03.225Z",
               "EditorCaption": ""
             },
             {
@@ -315,66 +325,53 @@
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-01T15:35:26.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GalleryController.cs",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\GalleryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GalleryController.cs",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\GalleryController.cs",
-              "RelativeToolTip": "Controllers\\GalleryController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T15:14:56.817Z",
+              "DocumentIndex": 9,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Gallery\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Gallery\\Details.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Gallery\\Details.cshtml",
+              "RelativeToolTip": "Views\\Gallery\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T09:34:28.877Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "Controllers\\ProfileController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwGYAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T20:26:46.646Z",
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Downloads\\Details.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Details.cshtml",
+              "RelativeToolTip": "Views\\Downloads\\Details.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T17:15:47.631Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAcwBEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T15:14:08.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Contacts.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Home\\Contacts.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Contacts.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Home\\Contacts.cshtml",
-              "RelativeToolTip": "Views\\Home\\Contacts.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABMAAAAAAAAAA==",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Downloads\\Create.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Create.cshtml",
+              "RelativeToolTip": "Views\\Downloads\\Create.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAewCQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T19:39:18.175Z",
+              "WhenOpened": "2025-02-06T16:53:35.889Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
@@ -387,7 +384,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
+              "Title": "Contacts.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Home\\Contacts.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Contacts.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Home\\Contacts.cshtml",
+              "RelativeToolTip": "Views\\Home\\Contacts.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-26T19:39:18.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "About.cshtml",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Home\\About.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\About.cshtml",
@@ -400,7 +410,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T15:14:08.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T20:26:46.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GalleryController.cs",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\GalleryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GalleryController.cs",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\GalleryController.cs",
+              "RelativeToolTip": "Controllers\\GalleryController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwHkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T15:14:56.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DownloadsController.cs",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\DownloadsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DownloadsController.cs",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Controllers\\DownloadsController.cs",
+              "RelativeToolTip": "Controllers\\DownloadsController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAKkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T21:54:47.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwBkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-01T15:13:46.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAC8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T15:17:51.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -408,25 +496,11 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-09-09T17:22:29.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T17:22:29.436Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAkwN4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-06T08:54:51.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "Download.cs",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Models\\Download.cs",
               "RelativeDocumentMoniker": "Models\\Download.cs",
@@ -434,12 +508,11 @@
               "RelativeToolTip": "Models\\Download.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T17:09:47.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T17:09:47.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -447,12 +520,11 @@
               "RelativeToolTip": "Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T12:29:48.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T12:29:48.232Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "Photo.cs",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Models\\Photo.cs",
               "RelativeDocumentMoniker": "Models\\Photo.cs",
@@ -460,48 +532,11 @@
               "RelativeToolTip": "Models\\Photo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:48:07.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-01T13:48:07.799Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Gallery\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Gallery\\Details.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Gallery\\Details.cshtml",
-              "RelativeToolTip": "Views\\Gallery\\Details.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAewE4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T09:34:28.877Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Downloads\\Details.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Details.cshtml",
-              "RelativeToolTip": "Views\\Downloads\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T17:15:47.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Downloads\\Create.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Downloads\\Create.cshtml",
-              "RelativeToolTip": "Views\\Downloads\\Create.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T16:53:35.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "additional-methods.min.js",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
               "RelativeDocumentMoniker": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
@@ -513,19 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\MyGallery\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\MyGallery\\Create.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\MyGallery\\Create.cshtml",
-              "RelativeToolTip": "Views\\MyGallery\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T16:40:30.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "additional-methods.js",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
               "RelativeDocumentMoniker": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
@@ -537,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "Models\\Comment.cs",
@@ -549,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "jquery.js",
               "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
               "RelativeDocumentMoniker": "wwwroot\\lib\\jquery\\dist\\jquery.js",
@@ -558,18 +581,6 @@
               "ViewState": "AgIAAGEaAAAAAAAAAAAUwG4aAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-07-23T13:21:31.511Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Profile\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Profile\\Edit.cshtml",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAAGYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-22T21:00:13.654Z"
             },
             {
               "$type": "Document",
@@ -582,18 +593,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-22T13:54:16.666Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
-              "ToolTip": "C:\\Users\\mimka\\Documents\\Projects\\MyWebsite1\\Views\\Profile\\Index.cshtml",
-              "RelativeToolTip": "Views\\Profile\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-22T20:31:03.225Z"
             },
             {
               "$type": "Document",
